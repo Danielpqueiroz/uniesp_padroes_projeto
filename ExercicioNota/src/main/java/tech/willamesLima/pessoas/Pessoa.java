@@ -21,6 +21,13 @@ public class Pessoa {
         this.endereco = endereco;
         this.telsContato = telsContato;
     }
+
+    public void cadastrar(String nome, Date dataNascimento,Endereco endereco, Collection<Telefone> telsContato){
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.telsContato = telsContato;
+    }
     // Método para calcular a idade
     public int calcularIdade() {
         Date dataAtual = new Date();

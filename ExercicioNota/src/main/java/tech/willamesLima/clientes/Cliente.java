@@ -12,6 +12,15 @@ public class Cliente extends Pessoa {
     private String codigo;
     private Profissao profissao;
 
+    public void cadastrar(String nome, Date dataNascimento,Endereco endereco, Collection<Telefone> telsContato, String codigo, Profissao profissao){
+        setNome(nome);
+        setDataNascimento(dataNascimento);
+        setEndereco(endereco);
+        setTelsContato(telsContato);
+        this.codigo = codigo;
+        this.profissao = profissao;
+    }
+
     public Cliente(String nome, Date dataNascimento, Endereco endereco, Collection<Telefone> telsContato, String codigo, Profissao profissao) {
         super(nome, dataNascimento, endereco, telsContato);
         this.codigo = codigo;

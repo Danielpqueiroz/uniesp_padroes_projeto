@@ -21,11 +21,11 @@ public class Aplication {
         Telefone telefone1 = new Telefone("(83) 9 99432290", "celular");
         Telefone telefone2 = new Telefone("(83) 32220018", "comercial");
 
-        Cargo cargo1 = new Cargo("Administrativo");
-        Cargo cargo2 = new Cargo("Gerente");
+        Cargo cargo1 =  Cargo.DIRETOR;
+        Cargo cargo2 =  Cargo.GERENTE;
 
-        Profissao profissao1 = new Profissao("Administrador");
-        Profissao profissao2 = new Profissao("Contador");
+        Profissao profissao1 =  Profissao.GERENTE;
+        Profissao profissao2 =  Profissao.ATENDENTE;
 
         Pessoa pessoa1 = new Pessoa("José", new Date(), endereco1, List.of(telefone1));
         Pessoa pessoa2 = new Pessoa("Maria de Lurdes", new Date(), endereco2, List.of(telefone2));

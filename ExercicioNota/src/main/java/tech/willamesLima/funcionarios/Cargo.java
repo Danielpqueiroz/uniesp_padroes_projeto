@@ -1,24 +1,8 @@
 package tech.willamesLima.funcionarios;
 
 
-public class Cargo {
+public enum Cargo {
 
-    private String descricao;
+    DIRETOR, VENDEDOR, GERENTE;
 
-    public Cargo(String descricao) {
-
-        this.descricao = descricao;
-    }
-
-
-
-    public String getDescricao() {
-
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-
-        this.descricao = descricao;
-    }
 }

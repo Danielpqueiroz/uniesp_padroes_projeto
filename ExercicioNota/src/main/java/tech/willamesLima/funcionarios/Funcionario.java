@@ -1,5 +1,6 @@
 package tech.willamesLima.funcionarios;
 
+import tech.willamesLima.clientes.Profissao;
 import tech.willamesLima.pessoas.Endereco;
 import tech.willamesLima.pessoas.Pessoa;
 import tech.willamesLima.pessoas.Telefone;
@@ -21,17 +22,28 @@ public class Funcionario extends Pessoa {
         this.salario = salario;
         this.dataAdmissao = dataAdmissao;
     }
+    public void cadastrar(String nome, Date dataNascimento,Endereco endereco, Collection<Telefone> telsContato, String codigo, Profissao profissao){
+        setNome(nome);
+        setDataNascimento(dataNascimento);
+        setEndereco(endereco);
+        setTelsContato(telsContato);
+        this.matrícula = matrícula;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.dataAdmissao = dataAdmissao;
+    }
 
 
+    public Integer getMatrícula() {
+        return matrícula;
+    }
     public void promover(Cargo novoCargo) {
         this.cargo = novoCargo;
     }
     // Método para reajustar o salário com base em um percentual
+
     public void reajustarSalario(double percentual) {
-        salario += salario * (percentual / 100);
-    }
-    public Integer getMatrícula() {
-        return matrícula;
+        this.salario += this.salario * (percentual / 100);
     }
 
     public void setMatrícula(Integer matrícula) {

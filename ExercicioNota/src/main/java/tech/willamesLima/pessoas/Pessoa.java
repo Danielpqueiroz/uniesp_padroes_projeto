@@ -3,6 +3,8 @@ package tech.willamesLima.pessoas;
 import tech.willamesLima.funcionarios.Cargo;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
@@ -11,26 +13,37 @@ import java.util.List;
 public class Pessoa {
 
     private String nome;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private Endereco endereco;
     private Collection<Telefone> telsContato;
 
-    public Pessoa(String nome, Date dataNascimento, Endereco endereco, Collection<Telefone> telsContato) {
+    public Pessoa(String nome, LocalDate dataNascimento, Endereco endereco, Collection<Telefone> telsContato) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
         this.telsContato = telsContato;
     }
 
-    public void cadastrar(String nome, Date dataNascimento,Endereco endereco, Collection<Telefone> telsContato){
+    public void cadastrarEndereco(String rua, String cidade, String estado, String cep){
+        this.endereco.setRua(rua);
+        this.endereco.setCep(cep);
+        this.endereco.setCidade(cidade);
+        this.endereco.setEstado(estado);
+    }
+
+    public void cadastrar(String nome, LocalDate dataNascimento,Endereco endereco, Collection<Telefone> telsContato){
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
         this.telsContato = telsContato;
     }
     // Método para calcular a idade
-    public int calcularIdade() {
-        Date dataAtual = new Date();
+    public int obterIdade() {
+        int idade = 0;
+        LocalDate dataAtual = LocalDate.now();
+        Period periodo = Period.between(dataNascimento, dataAtual);
+        return  idade = periodo.getYears();
+        /*Date dataAtual = new Date();
         Calendar dataNascimentoCal = Calendar.getInstance();
         dataNascimentoCal.setTime(dataNascimento);
         Calendar dataAtualCal = Calendar.getInstance();
@@ -45,7 +58,7 @@ public class Pessoa {
             idade--;
         }
 
-        return idade;
+        return idade;*/
     }
 
 
@@ -60,12 +73,12 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
 
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
 
         this.dataNascimento = dataNascimento;
     }

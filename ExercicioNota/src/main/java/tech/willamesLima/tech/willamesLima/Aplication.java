@@ -15,9 +15,7 @@ import java.util.List;
 public class Aplication {
 
     public static void main(String[] args) {
-        Pessoa pessoa01 = new Pessoa();
-        Cliente cliente01 = new Cliente();
-        Funcionario func01 = new Funcionario();
+
 
         Endereco endereco1 = new Endereco("Sobe e desce", "mamanguape", "Paraíba", "58001001");
         Endereco endereco2 = new Endereco("Senador Nilo Peçanha", "Maraial", "Pernambuco", "51310250");
@@ -35,7 +33,7 @@ public class Aplication {
         Pessoa pessoa2 = new Pessoa("Maria de Lurdes", LocalDate.of(2000, 05, 6), endereco2, List.of(telefone2));
 
         //Funcionario funcionario1 = new Funcionario("João", new Date(), endereco1, List.of(telefone1), cargo1, 5000.0, new Date());
-        Cliente cliente1 = new Cliente("Ademir", new Date(), endereco2, List.of(telefone2), "CL213", profissao1);
+        Cliente cliente1 = new Cliente("Ademir", LocalDate.of(2000, 11, 6), endereco2, List.of(telefone2), "CL213", profissao1);
         int idade = cliente1.obterIdade();
         System.out.println("Idade: " + idade);
 

@@ -5,6 +5,7 @@ import tech.willamesLima.pessoas.Endereco;
 import tech.willamesLima.pessoas.Pessoa;
 import tech.willamesLima.pessoas.Telefone;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -15,14 +16,12 @@ public class Funcionario extends Pessoa {
     private Double salario;
     private Date dataAdmissao;
 
-    public Funcionario(String nome, Date dataNascimento, Endereco endereco, Collection<Telefone> telsContato, Cargo cargo, Double salario, Date dataAdmissao) {
+    public Funcionario(String nome, LocalDate dataNascimento, Endereco endereco, Collection<Telefone> telsContato) {
         super(nome, dataNascimento, endereco, telsContato);
-        this.matrícula = matrícula;
-        this.cargo = cargo;
-        this.salario = salario;
-        this.dataAdmissao = dataAdmissao;
     }
-    public void cadastrar(String nome, Date dataNascimento,Endereco endereco, Collection<Telefone> telsContato, String codigo, Profissao profissao){
+
+
+    public void cadastrar(String nome, LocalDate dataNascimento, Endereco endereco, Collection<Telefone> telsContato, String codigo, Profissao profissao){
         setNome(nome);
         setDataNascimento(dataNascimento);
         setEndereco(endereco);

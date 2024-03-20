@@ -1,20 +1,6 @@
 package tech.willamesLima.clientes;
 
-public class Profissao {
+public enum Profissao {
+    GERENTE, ATENDENTE, DIRETOR;
 
-    private String descricao;
-
-    public Profissao(String descricao) {
-
-        this.descricao = descricao;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-
-        this.descricao = descricao;
-    }
 }
